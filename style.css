@@ -1,0 +1,277 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #bf2bdc;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .logo-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .logos {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  header h3 {
+    font-size: 1.5rem;
+  }
+  
+  /* Main content styles */
+  main {
+    padding: 2rem 0;
+  }
+  
+  .service-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  /* Anglican compass watermark */
+  .service-header,
+  .service-content,
+  .prayer-sections,
+  .accordion-content {
+    position: relative;
+  }
+  
+  .service-header::before,
+  .service-content::before,
+  .prayer-sections::before,
+  .accordion-content::before {
+    content: "";
+    background-image: url("Anglican\ compass.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.09;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  /* Service header styles */
+  .service-header {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+  }
+  
+  .service-header h2 {
+    color: #1e3a8a;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .service-header h3 {
+    color: #1e3a8a;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .service-header p {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  /* Service content styles */
+  .service-content {
+    padding: 1.5rem;
+  }
+  
+  .service-content h3 {
+    color: #1e3a8a;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .service-items {
+    margin-bottom: 2rem;
+  }
+  
+  .service-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #c0c2c300;
+  }
+  
+  .item-name {
+    font-weight: 500;
+  }
+  
+  /* Prayer sections styles */
+  .prayer-sections {
+    padding: 1.5rem;
+  }
+  
+  .prayer-sections h3 {
+    color: #1e3a8a;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Accordion styles */
+  .accordion {
+    border: 1px solid #c7c7c7b6;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .accordion-item {
+    border-bottom: 1px solid #1e071e;
+  }
+  
+  .accordion-item:last-child {
+    border-bottom: none;
+  }
+  
+  .accordion-header {
+    background-color: #ece7ea;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .accordion-header h4 {
+    font-size: 1.2rem;
+    color: #1e3a8a;
+    margin: 0;
+  }
+  
+  .accordion-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .accordion-header.active + .accordion-content {
+    max-height: 1000px;
+  }
+  
+  .prayer-text {
+    padding: 1.5rem;
+  }
+  
+  .prayer-title {
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  
+  .prayer-response {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* St. Mary Magdalene Prayer styles */
+  .mary-prayer {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .prayer-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+  
+  footer p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    header h2 {
+      font-size: 1.5rem;
+    }
+  
+    header h3 {
+      font-size: 1.2rem;
+    }
+  
+    .service-header h2 {
+      font-size: 1.5rem;
+    }
+  
+    .service-header h3 {
+      font-size: 1.3rem;
+    }
+  
+    .service-content h3,
+    .prayer-sections h3 {
+      font-size: 1.3rem;
+    }
+  
+    .accordion-header h4 {
+      font-size: 1.1rem;
+    }
+  }
+  

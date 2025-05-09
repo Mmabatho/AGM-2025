@@ -65,32 +65,35 @@
     position: relative;
   }
   
-  /* Anglican compass watermark */
-  .service-header,
-  .service-content,
-  .prayer-sections,
-  .accordion-content {
-    position: relative;
-  }
-  
-  .service-header::before,
-  .service-content::before,
-  .prayer-sections::before,
-  .accordion-content::before {
-    content: "";
-    background-image: url("Anglican\ compass.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.09;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    pointer-events: none;
-  }
+* Remove the watermark from all sections */
+.service-header::before,
+.service-content::before,
+.prayer-sections::before,
+.accordion-content::before {
+  display: none; /* Remove all existing watermarks */
+}
+
+/* Only add the watermark to expanded accordion content */
+.accordion-header.active + .accordion-content {
+  position: relative;
+}
+
+.accordion-header.active + .accordion-content::before {
+  content: "";
+  background-image: url("Anglican\ compass.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.09;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  display: block; /* Show watermark only on active accordion content */
+}
   
   /* Service header styles */
   .service-header {
